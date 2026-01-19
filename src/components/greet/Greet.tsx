@@ -3,9 +3,10 @@ interface GreetProps {
 }
 
 const Greet = ({ name }: GreetProps) => {
+  const greetingName = name ?? 'Guest';
   return (
     <div>
-      <h1>Hello {name}</h1>
+      <h1>Hello {greetingName}</h1>
     </div>
   );
 };

@@ -7,15 +7,15 @@ import { render, screen } from '@testing-library/react';
 import Greet from './Greet';
 
 describe('Greet Component', () => {
-  test('renders Hello', () => {
+  test('renders Hello Guest when no name is provided', () => {
     render(<Greet />);
-    const textElement = screen.getByText('Hello');
+    const textElement = screen.getByText('Hello Guest');
     expect(textElement).toBeInTheDocument();
   });
-});
 
-test('renders Hello with a Name props', () => {
-  render(<Greet name="Prio" />);
-  const textElement = screen.getByText('Hello Prio');
-  expect(textElement).toBeInTheDocument();
+  test('renders Hello with a Name prop', () => {
+    render(<Greet name="Prio" />);
+    const textElement = screen.getByText('Hello Prio');
+    expect(textElement).toBeInTheDocument();
+  });
 });
